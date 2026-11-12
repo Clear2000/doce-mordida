@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add("js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doce Mordida · Cookies recheados em Laguna</title>
+<meta name="description" content="Cookies recheados feitos em Laguna/SC. Nutella, pistache, Stikadinho e mais. Monte sua caixa e peça pelo WhatsApp. Terça a domingo, 14h às 20h.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#5A0A14">
+<link rel="icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,600..900,100,1&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vinho:#5A0A14; --vinho-2:#741826; --vinho-3:#3E060D;
+  --creme:#FFF6E2; --creme-2:#F5E4C3; --rosa:#F2B8BE;
+  --ink:#2B0A0F; --ink-2:#6B4A45;
+  --gut:clamp(16px,4vw,56px); --max:1240px;
+  --r:22px;
+  --display:"Fraunces",Georgia,serif;
+  --body:"DM Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--creme);color:var(--ink);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:3px solid var(--rosa);outline-offset:3px;border-radius:6px}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.disp{font-family:var(--display);font-variation-settings:"SOFT" 100,"WONK" 1;font-weight:900;letter-spacing:-.02em;line-height:.98}
+h2.disp{font-size:clamp(38px,5.6vw,72px)}
+.lead{font-size:clamp(17px,1.5vw,20px);max-width:34em}
+.btn{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;white-space:nowrap;transition:transform .2s cubic-bezier(.2,.8,.2,1),background .2s}
+.btn:active{transform:scale(.97)}
+.btn-creme{background:var(--creme);color:var(--vinho)}
+.btn-creme:hover{background:#fff}
+.btn-vinho{background:var(--vinho);color:var(--creme)}
+.btn-vinho:hover{background:var(--vinho-2)}
+.btn-line{box-shadow:inset 0 0 0 2px currentColor}
+.btn svg{width:20px;height:20px;flex:none}
+.checker{--c1:var(--vinho);--c2:var(--creme);--s:28px;background:repeating-conic-gradient(var(--c1) 0 25%,var(--c2) 0 50%) 0 0/var(--s) var(--s)}
+
+/* barra de status */
+.status{background:var(--vinho-3);color:var(--creme);font-size:14px}
+.status .wrap{display:flex;justify-content:space-between;align-items:center;height:38px;gap:16px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#7BD88F;margin-right:8px;vertical-align:1px}
+.dot.off{background:var(--rosa)}
+.status .hide-sm{opacity:.75}
+
+/* header */
+header.top{position:sticky;top:0;z-index:40;background:var(--creme);border-bottom:1px solid rgba(90,10,20,.12)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.mark{display:flex;align-items:center;gap:12px;white-space:nowrap}
+.mark img{width:52px;height:52px;border-radius:50%;box-shadow:0 0 0 2px var(--vinho)}
+.mark b{font-family:var(--display);font-variation-settings:"SOFT" 100,"WONK" 1;font-weight:900;font-size:24px;color:var(--vinho);letter-spacing:-.01em}
+nav.links{display:flex;gap:30px;font-weight:600;font-size:15px;color:var(--vinho)}
+nav.links a{position:relative;padding:6px 0}
+nav.links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav.links a:hover::after{transform:scaleX(1)}
+header.top .btn{height:46px;padding:0 20px;font-size:15px}
+
+/* hero */
+.hero{background:var(--vinho);color:var(--creme);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(28px,5vw,72px);align-items:center;padding-top:clamp(40px,6vw,84px);padding-bottom:clamp(56px,7vw,96px)}
+.hero h1{font-size:clamp(42px,6.3vw,88px);color:var(--creme)}
+.hero h1 span{white-space:nowrap;display:block}
+.hero h1 em{font-style:italic;color:var(--rosa)}
+.hero .lead{margin-top:32px;color:#F8E6D6}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+.hero .facts{display:flex;gap:clamp(20px,3vw,40px);margin-top:44px;padding-top:26px;border-top:1px solid rgba(255,246,226,.2)}
+.hero .facts b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--creme)}
+.hero .facts span{font-size:14px;color:#E9CFC2}
+.hero-pic{position:relative;aspect-ratio:4/4.6;border-radius:var(--r);overflow:hidden}
+.hero-pic img{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
+.sticker{position:absolute;right:-14px;top:22px;width:clamp(116px,12vw,150px);aspect-ratio:1;border-radius:50%;background:var(--rosa);color:var(--vinho);display:grid;place-items:center;text-align:center;transform:rotate(10deg);z-index:2}
+.sticker div{font-weight:700;font-size:13px;line-height:1.15}
+.sticker b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(26px,2.6vw,34px);line-height:1;margin:2px 0}
+.hero-frame{position:relative}
+.hero-frame .tag{position:absolute;left:18px;bottom:18px;background:var(--creme);color:var(--vinho);border-radius:14px;padding:12px 16px;display:flex;gap:12px;align-items:center;font-size:14px;font-weight:600;max-width:calc(100% - 36px)}
+.hero-frame .tag img{width:40px;height:40px;border-radius:50%}
+.strip{height:28px}
+
+/* ranking */
+.rank{padding:clamp(72px,9vw,128px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:clamp(36px,4vw,56px)}
+.sec-head h2{color:var(--vinho);max-width:12em}
+.sec-head p{max-width:24em;color:var(--ink-2)}
+.podium{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:clamp(14px,2vw,26px);align-items:end}
+.pod{position:relative;border-radius:var(--r);overflow:hidden;background:var(--vinho);color:var(--creme)}
+.pod img{width:100%;aspect-ratio:1/1.05;object-fit:cover}
+.pod.first img{aspect-ratio:1/1.2}
+.pod .info{padding:20px 22px 24px;display:flex;justify-content:space-between;align-items:end;gap:12px}
+.pod h3{font-family:var(--display);font-weight:900;font-variation-settings:"SOFT" 100;font-size:clamp(26px,2.6vw,34px);line-height:1}
+.pod p{font-size:14px;color:#EBD3C6;margin-top:6px}
+.pod .pos{position:absolute;top:16px;left:16px;width:58px;height:58px;border-radius:50%;background:var(--creme);color:var(--vinho);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:24px}
+.pod.first .pos{background:var(--rosa);width:70px;height:70px;font-size:28px}
+.pod .add{flex:none}
+
+/* cardapio */
+.menu{background:var(--creme-2);padding:clamp(72px,9vw,128px) 0}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.8vw,24px)}
+.item{background:var(--creme);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.item img{aspect-ratio:1/.86;object-fit:cover;width:100%}
+.item .b{padding:18px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.item h3{font-family:var(--display);font-weight:800;font-size:23px;line-height:1.05;color:var(--vinho)}
+.item p{font-size:15px;color:var(--ink-2);flex:1}
+.item .row{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.price{font-weight:700;font-size:18px;color:var(--vinho)}
+.add{height:42px;padding:0 16px;border-radius:999px;background:var(--vinho);color:var(--creme);font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.add:hover{background:var(--vinho-2)}
+.add:active{transform:scale(.95)}
+.add.pop{animation:pop .35s}
+@keyframes pop{40%{transform:scale(1.12)}}
+.item.note{background:var(--vinho);color:var(--creme);justify-content:center;padding:28px}
+.item.note h3{color:var(--creme);font-size:30px}
+.item.note p{color:#EBD3C6;flex:0;margin:12px 0 22px}
+
+/* caixa */
+.box{background:var(--vinho);color:var(--creme);padding:clamp(72px,9vw,128px) 0;position:relative}
+.box .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(32px,5vw,80px);align-items:center}
+.box h2{color:var(--creme)}
+.box .lead{color:#F3DCCF;margin-top:22px}
+.sizes{display:flex;gap:10px;margin-top:34px}
+.size{flex:1;min-height:64px;border-radius:16px;box-shadow:inset 0 0 0 2px rgba(255,246,226,.35);text-align:center;padding:10px 6px;line-height:1.2}
+.size b{display:block;font-family:var(--display);font-size:22px}
+.size span{font-size:13px;opacity:.8}
+.size[aria-pressed=true]{background:var(--creme);color:var(--vinho);box-shadow:none}
+.picks{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chip{height:40px;padding:0 14px 0 6px;border-radius:999px;background:rgba(255,246,226,.1);display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;transition:background .2s}
+.chip:hover{background:rgba(255,246,226,.2)}
+.chip img{width:28px;height:28px;border-radius:50%;object-fit:cover}
+.tray{background:var(--creme);border-radius:28px;padding:clamp(18px,2.4vw,30px);color:var(--ink)}
+.tray-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.tray-top b{font-family:var(--display);font-weight:900;font-size:24px;color:var(--vinho)}
+.tray-top button{font-size:14px;font-weight:600;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:14px;border-radius:20px}
+.slots.n2{grid-template-columns:repeat(2,1fr)}
+.slots.n4{grid-template-columns:repeat(2,1fr)}
+.slot{aspect-ratio:1;border-radius:50%;background:var(--creme);display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:inset 0 0 0 2px rgba(90,10,20,.18)}
+.slot.empty::after{content:"+";font-family:var(--display);font-size:34px;color:rgba(90,10,20,.3)}
+.slot img{width:100%;height:100%;object-fit:cover;animation:drop .35s cubic-bezier(.2,.9,.3,1.2)}
+.slot button{position:absolute;inset:0}
+.slot .x{position:absolute;right:8%;top:8%;width:26px;height:26px;border-radius:50%;background:var(--creme);color:var(--vinho);font-weight:700;font-size:14px;display:grid;place-items:center;pointer-events:none}
+@keyframes drop{from{transform:scale(.6);opacity:0}}
+.slots.n2 .slot,.slots.n4 .slot{max-width:200px;justify-self:center;width:100%}
+.sum{display:flex;justify-content:space-between;align-items:center;margin-top:22px;gap:16px;flex-wrap:wrap}
+.sum .t{font-size:14px;color:var(--ink-2)}
+.sum .t b{display:block;font-family:var(--display);font-weight:900;font-size:34px;line-height:1;color:var(--vinho)}
+.sum .btn[disabled]{opacity:.45;cursor:not-allowed}
+.hint{font-size:13px;color:var(--ink-2);margin-top:14px}
+
+/* fornada */
+.forno{padding:clamp(72px,9vw,128px) 0}
+.forno .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,80px);align-items:center}
+.forno .pics{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+.forno .pics img{width:100%;height:100%;object-fit:cover;border-radius:var(--r)}
+.forno .pics img:first-child{grid-row:span 2;aspect-ratio:3/4.2}
+.forno .pics img:not(:first-child){aspect-ratio:1}
+.forno h2{color:var(--vinho)}
+.steps{margin-top:34px;display:grid;gap:22px}
+.steps>div{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start}
+.steps i{font-style:normal;width:52px;height:52px;border-radius:50%;background:var(--vinho);color:var(--creme);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:22px}
+.steps b{display:block;font-size:18px;color:var(--vinho);margin-bottom:2px}
+.steps p{color:var(--ink-2);font-size:16px}
+
+/* encomenda */
+.party{position:relative;color:var(--creme);overflow:hidden}
+.party img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.party::before{content:"";position:absolute;inset:0;background:rgba(43,6,12,.62);z-index:1}
+.party .wrap{position:relative;z-index:2;padding-top:clamp(90px,12vw,170px);padding-bottom:clamp(90px,12vw,170px)}
+.party h2{max-width:11em}
+.party .lead{margin-top:24px;color:#F6E2D8}
+.party .btn{margin-top:34px}
+
+/* instagram */
+.ig{padding:clamp(72px,9vw,128px) 0;background:var(--creme)}
+.ig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,18px)}
+.ig-grid a{border-radius:18px;overflow:hidden;aspect-ratio:1;display:block}
+.ig-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.ig-grid a:hover img{transform:scale(1.04)}
+
+/* onde */
+.onde{background:var(--vinho);color:var(--creme);padding:clamp(72px,9vw,120px) 0 0}
+.onde .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,80px)}
+.onde h2{color:var(--creme)}
+.onde .lead{color:#F3DCCF;margin-top:22px}
+.onde .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.hours{background:var(--creme);color:var(--ink);border-radius:var(--r);padding:clamp(22px,3vw,36px)}
+.hours h3{font-family:var(--display);font-weight:900;font-size:28px;color:var(--vinho);margin-bottom:14px}
+.hours ul{list-style:none}
+.hours li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(90,10,20,.12);font-size:16px}
+.hours li:last-child{border:0}
+.hours li.today{font-weight:700;color:var(--vinho)}
+.hours li.off span:last-child{color:var(--ink-2)}
+footer{margin-top:clamp(64px,8vw,110px)}
+footer .base{border-top:1px solid rgba(255,246,226,.18);padding:26px 0 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:#DDBFB4}
+footer .base a{text-decoration:underline;text-underline-offset:3px}
+
+/* barra flutuante da caixa */
+.bag{position:fixed;left:50%;bottom:18px;transform:translate(-50%,140%);z-index:50;background:var(--ink);color:var(--creme);border-radius:999px;padding:8px 8px 8px 22px;display:flex;align-items:center;gap:16px;font-size:15px;transition:transform .35s cubic-bezier(.2,.8,.2,1);max-width:calc(100% - 32px);white-space:nowrap}
+.bag.show{transform:translate(-50%,0)}
+.bag .btn{height:44px;padding:0 18px;font-size:14px}
+.toast{position:fixed;left:50%;top:22px;transform:translate(-50%,-200px);z-index:60;background:var(--creme);color:var(--vinho);border-radius:14px;padding:14px 20px;font-weight:600;font-size:15px;box-shadow:0 10px 30px rgba(0,0,0,.18);transition:transform .35s;max-width:calc(100% - 32px)}
+.toast.show{transform:translate(-50%,0)}
+
+/* revelar */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}*{animation:none!important}}
+
+@media (max-width:1020px){
+  nav.links{display:none}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .hero .wrap,.box .wrap,.forno .wrap,.onde .wrap{grid-template-columns:1fr}
+  .hero-pic{aspect-ratio:4/3.4}
+  .sec-head{flex-direction:column;align-items:start}
+  .ig-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .status .hide-sm{display:none}
+  header.top .wrap{height:66px}
+  .mark img{width:44px;height:44px}
+  .mark b{font-size:20px}
+  header.top .btn{height:42px;padding:0 14px;font-size:14px}
+  header.top .btn span{display:none}
+  .hero .facts{gap:18px}
+  .hero .facts span{font-size:13px;line-height:1.3;display:block;margin-top:4px}
+  .hero .facts b{font-size:22px;white-space:nowrap}
+  .hero .facts{justify-content:space-between}
+  .sticker{right:10px;top:12px}
+  .podium{grid-template-columns:1fr;gap:16px}
+  .pod img,.pod.first img{aspect-ratio:4/3}
+  .pod.first{order:-1}
+  .grid{gap:12px}
+  .item .b{padding:14px 14px 16px}
+  .item h3{font-size:19px}
+  .item p{font-size:14px}
+  .item .row{flex-direction:column;align-items:stretch;gap:10px}
+  .add{justify-content:center}
+  .forno .pics{grid-template-columns:1fr 1fr}
+  .forno .pics img:first-child{grid-row:auto;grid-column:span 2;aspect-ratio:4/3}
+  .sizes{gap:8px}
+  .bag{font-size:14px;padding-left:16px;gap:10px}
+}
+</style>
+</head>
+<body>
+
+<div class="status"><div class="wrap">
+  <span id="aberto"><i class="dot"></i>Terça a domingo, das 14h às 20h</span>
+  <span class="hide-sm">Laguna · SC &nbsp;·&nbsp; @docemordidadu</span>
+</div></div>
+
+<header class="top"><div class="wrap">
+  <a class="mark" href="#topo" aria-label="Doce Mordida, início"><img src="img/logo.jpg" alt="Logo Doce Mordida"><b>Doce Mordida</b></a>
+  <nav class="links" aria-label="Seções">
+    <a href="#favoritos">Favoritos</a><a href="#cardapio">Cardápio</a><a href="#caixa">Monte sua caixa</a><a href="#encomendas">Encomendas</a><a href="#onde">Onde estamos</a>
+  </nav>
+  <a class="btn btn-vinho" href="https://wa.me/message/ZNNKJ2IQ63SPC1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.2 1.3Z"/></svg><span>Pedir no WhatsApp</span></a>
+</div></header>
+
+<main id="topo">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1 class="disp"><span>Cookie grande.</span> <span><em>Recheio</em> de sobra.</span></h1>
+      <p class="lead">Cookies recheados feitos em Laguna, de terça a domingo. Escolha os sabores, monte sua caixa e peça pelo WhatsApp.</p>
+      <div class="ctas">
+        <a class="btn btn-creme" href="#caixa">Montar minha caixa</a>
+        <a class="btn btn-line" href="#cardapio">Ver o cardápio</a>
+      </div>
+      <div class="facts">
+        <div><b>7</b><span>sabores no cardápio</span></div>
+        <div><b>14h–20h</b><span>de terça a domingo</span></div>
+        <div><b>Laguna</b><span>retirada e entrega</span></div>
+      </div>
+    </div>
+    <div class="hero-frame">
+      <div class="sticker"><div>cookie<b>R$ 9,99</b>a unidade</div></div>
+      <div class="hero-pic"><img src="img/hero.jpg" alt="Cookie de chocolate partido ao meio, com o recheio derretido" fetchpriority="high"></div>
+      <div class="tag"><img src="img/logo.jpg" alt="">Saiu do forno hoje à tarde</div>
+    </div>
+  </div>
+</section>
+<div class="strip checker" aria-hidden="true"></div>
+
+<section class="rank" id="favoritos">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 class="disp">Os favoritos da semana</h2>
+      <p>O ranking que a gente posta toda semana no Instagram. Esses três acabam primeiro, então garanta o seu cedo.</p>
+    </div>
+    <div class="podium">
+      <article class="pod rv">
+        <span class="pos">2º</span>
+        <img src="img/pistache.jpg" alt="Cookie de pistache" loading="lazy">
+        <div class="info"><div><h3>Pistache</h3><p>Massa amanteigada e creme de pistache</p></div><button class="add btn-creme" style="background:var(--creme);color:var(--vinho)" data-add="pistache">+ Caixa</button></div>
+      </article>
+      <article class="pod first rv">
+        <span class="pos">1º</span>
+        <img src="img/nutella.jpg" alt="Cookie de Nutella com o recheio escorrendo" loading="lazy">
+        <div class="info"><div><h3>Nutella</h3><p>O campeão. Recheio que escorre na primeira mordida</p></div><button class="add" style="background:var(--creme);color:var(--vinho)" data-add="nutella">+ Caixa</button></div>
+      </article>
+      <article class="pod rv">
+        <span class="pos">3º</span>
+        <img src="img/stikadinho.jpg" alt="Cookie de chocolate recheado de Stikadinho" loading="lazy">
+        <div class="info"><div><h3>Stikadinho</h3><p>Massa de cacau com recheio de Stikadinho</p></div><button class="add" style="background:var(--creme);color:var(--vinho)" data-add="stikadinho">+ Caixa</button></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="cardapio">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 class="disp">Cardápio</h2>
+      <p>Todo cookie tem cerca de 120 g e é recheado por dentro. Toque em “+ Caixa” para ir montando o pedido.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="box" id="caixa">
+  <div class="wrap">
+    <div class="rv">
+      <h2 class="disp">Monte sua caixa</h2>
+      <p class="lead">Escolha o tamanho, toque nos sabores e a gente recebe o pedido pronto no WhatsApp. Dá para misturar à vontade.</p>
+      <div class="sizes" role="group" aria-label="Tamanho da caixa">
+        <button class="size" data-size="2" aria-pressed="false"><b>2</b><span>dupla</span></button>
+        <button class="size" data-size="4" aria-pressed="true"><b>4</b><span>quarteto</span></button>
+        <button class="size" data-size="6" aria-pressed="false"><b>6</b><span>pra dividir</span></button>
+      </div>
+      <div class="picks" id="picks" aria-label="Adicionar sabor"></div>
+    </div>
+    <div class="tray rv" aria-live="polite">
+      <div class="tray-top"><b id="trayTitle">Caixa com 4</b><button id="clear" type="button">Esvaziar</button></div>
+      <div class="slots checker n4" id="slots" style="--s:36px;--c1:#EBD3B0;--c2:var(--creme-2)"></div>
+      <div class="sum">
+        <div class="t"><b id="total">R$ 0,00</b><span id="count">0 de 4 escolhidos</span></div>
+        <button class="btn btn-vinho" id="send" disabled>Enviar pedido</button>
+      </div>
+      <p class="hint" id="hint">Toque num sabor para colocar na caixa. Toque num cookie da caixa para tirar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="forno">
+  <div class="wrap">
+    <div class="pics rv">
+      <img src="img/fornada.jpg" alt="Fornada de cookies esfriando na grade" loading="lazy">
+      <img src="img/pilha.jpg" alt="Pilha de cookies" loading="lazy">
+      <img src="img/leite.jpg" alt="Cookies com um copo de leite" loading="lazy">
+    </div>
+    <div class="rv">
+      <h2 class="disp">Do forno pra sua mão</h2>
+      <p class="lead" style="margin-top:22px;color:var(--ink-2)">A massa descansa de um dia para o outro e o cookie só vai ao forno no dia em que sai. Por isso a casquinha fica crocante e o meio continua mole.</p>
+      <div class="steps">
+        <div><i>1</i><div><b>Você escolhe</b><p>Pelo site ou direto no WhatsApp, até as 19h.</p></div></div>
+        <div><i>2</i><div><b>A gente assa</b><p>Cada pedido sai quentinho, na caixa da Doce Mordida.</p></div></div>
+        <div><i>3</i><div><b>Retire ou receba</b><p>Retirada combinada ou entrega em Laguna.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="party" id="encomendas">
+  <img class="bg" src="img/brownie.jpg" alt="" loading="lazy">
+  <div class="wrap rv">
+    <h2 class="disp">Caixas para festa, presente e empresa</h2>
+    <p class="lead">Aniversário, chá, lembrancinha ou café da equipe: a partir de 12 unidades a gente monta caixas personalizadas com os sabores que você quiser. Peça com dois dias de antecedência.</p>
+    <a class="btn btn-creme" href="https://wa.me/message/ZNNKJ2IQ63SPC1" target="_blank" rel="noopener">Pedir orçamento de encomenda</a>
+  </div>
+</section>
+
+<section class="ig">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 class="disp">No Instagram</h2>
+      <p>Sorteios, sabores novos e o ranking da semana saem primeiro no <a href="https://www.instagram.com/docemordidadu/" target="_blank" rel="noopener" style="color:var(--vinho);font-weight:700;text-decoration:underline">@docemordidadu</a>.</p>
+    </div>
+    <div class="ig-grid rv">
+      <a href="https://www.instagram.com/docemordidadu/" target="_blank" rel="noopener"><img src="img/ig-p4.jpg" alt="Post: ranking dos favoritos da semana" loading="lazy"></a>
+      <a href="https://www.instagram.com/docemordidadu/" target="_blank" rel="noopener"><img src="img/ig-p6.jpg" alt="Post: sorteio de cookies" loading="lazy"></a>
+      <a href="https://www.instagram.com/docemordidadu/" target="_blank" rel="noopener"><img src="img/ig-p7.jpg" alt="Post: promoção de Halloween" loading="lazy"></a>
+      <a href="https://www.instagram.com/docemordidadu/" target="_blank" rel="noopener"><img src="img/ig-p3.jpg" alt="Post: não ignore os sinais" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<section class="onde" id="onde">
+  <div class="wrap">
+    <div class="rv">
+      <h2 class="disp">Bateu a vontade? A gente tá aqui.</h2>
+      <p class="lead">Doce Mordida, Laguna/SC. Pedidos pelo WhatsApp, com retirada combinada ou entrega na cidade.</p>
+      <div class="ctas">
+        <a class="btn btn-creme" href="https://wa.me/message/ZNNKJ2IQ63SPC1" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn btn-line" href="https://www.instagram.com/docemordidadu/" target="_blank" rel="noopener">Seguir no Instagram</a>
+      </div>
+    </div>
+    <div class="hours rv">
+      <h3>Horários</h3>
+      <ul id="hours">
+        <li data-d="1" class="off"><span>Segunda</span><span>Fechado</span></li>
+        <li data-d="2"><span>Terça</span><span>14h às 20h</span></li>
+        <li data-d="3"><span>Quarta</span><span>14h às 20h</span></li>
+        <li data-d="4"><span>Quinta</span><span>14h às 20h</span></li>
+        <li data-d="5"><span>Sexta</span><span>14h às 20h</span></li>
+        <li data-d="6"><span>Sábado</span><span>14h às 20h</span></li>
+        <li data-d="0"><span>Domingo</span><span>14h às 20h</span></li>
+      </ul>
+    </div>
+  </div>
+  <footer><div class="wrap base">
+    <span>© 2026 Doce Mordida · Laguna, SC</span>
+    <span>Fotos de produto ilustrativas: <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> · Site por Evoly</span>
+  </div></footer>
+</section>
+</main>
+
+<div class="bag" id="bag" aria-live="polite"><span id="bagTxt">Caixa: 0 de 4</span><a class="btn btn-creme" href="#caixa">Ver caixa</a></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const WA="https://wa.me/message/ZNNKJ2IQ63SPC1";
+const MENU=[
+ {id:"nutella",n:"Nutella",d:"Massa clássica com gotas e recheio generoso de Nutella.",p:9.99,img:"nutella.jpg"},
+ {id:"pistache",n:"Pistache",d:"Massa amanteigada, chocolate branco e creme de pistache.",p:9.99,img:"pistache.jpg"},
+ {id:"stikadinho",n:"Stikadinho",d:"Massa de cacau com recheio cremoso de Stikadinho.",p:9.99,img:"stikadinho.jpg"},
+ {id:"tradicional",n:"Tradicional",d:"Baunilha, açúcar mascavo e muita gota de chocolate.",p:9.99,img:"tradicional.jpg"},
+ {id:"branco",n:"Ninho",d:"Chocolate branco com recheio de leite Ninho.",p:9.99,img:"branco.jpg"},
+ {id:"redvelvet",n:"Red velvet",d:"Massa de cacau avermelhada com recheio de cream cheese.",p:9.99,img:"redvelvet.jpg"},
+ {id:"brownie",n:"Brownie",d:"Quadrado de brownie úmido, casquinha que estala.",p:12,img:"brownie.jpg"}
+];
+const by=Object.fromEntries(MENU.map(m=>[m.id,m]));
+const brl=v=>v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+let size=4, box=[];
+
+// cardápio
+document.getElementById("grid").innerHTML=MENU.map(m=>`
+ <article class="item rv"><img src="img/${m.img}" alt="${m.n}" loading="lazy">
+  <div class="b"><h3>${m.n}</h3><p>${m.d}</p>
+  <div class="row"><span class="price">${brl(m.p)}</span><button class="add" data-add="${m.id}">+ Caixa</button></div></div></article>`).join("")+`
+ <article class="item note rv"><h3>Não achou o seu?</h3><p>Todo mês entra um sabor novo. Pergunte qual é o da vez.</p><a class="btn btn-creme" href="${WA}" target="_blank" rel="noopener">Perguntar</a></article>`;
+document.getElementById("picks").innerHTML=MENU.map(m=>`<button class="chip" data-add="${m.id}"><img src="img/${m.img}" alt="">${m.n}</button>`).join("");
+
+const $=id=>document.getElementById(id);
+function render(){
+  const s=$("slots");s.className="slots checker n"+size;
+  let h="";for(let i=0;i<size;i++){const it=box[i];
+    h+=it?`<div class="slot"><img src="img/${by[it].img}" alt="${by[it].n}"><span class="x">×</span><button aria-label="Tirar ${by[it].n}" data-rm="${i}"></button></div>`:`<div class="slot empty"></div>`}
+  s.innerHTML=h;
+  const tot=box.reduce((a,id)=>a+by[id].p,0);
+  $("total").textContent=brl(tot);
+  $("count").textContent=`${box.length} de ${size} escolhidos`;
+  $("trayTitle").textContent=`Caixa com ${size}`;
+  $("send").disabled=!box.length;
+  $("bagTxt").textContent=`Caixa: ${box.length} de ${size} · ${brl(tot)}`;
+  $("bag").classList.toggle("show",box.length>0&&!trayVisible);
+  document.querySelectorAll(".size").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.size===size));
+}
+function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove("show"),3200)}
+document.addEventListener("click",e=>{
+  const a=e.target.closest("[data-add]");
+  if(a){ if(box.length>=size){ if(size<6){size=6}else{toast("Caixa cheia! Tire um cookie ou envie o pedido.");return} }
+    box.push(a.dataset.add);a.classList.remove("pop");void a.offsetWidth;a.classList.add("pop");render();return}
+  const r=e.target.closest("[data-rm]");if(r){box.splice(+r.dataset.rm,1);render();return}
+  const s=e.target.closest("[data-size]");if(s){size=+s.dataset.size;box=box.slice(0,size);render()}
+});
+$("clear").onclick=()=>{box=[];render()};
+$("send").onclick=async()=>{
+  const c={};box.forEach(id=>c[id]=(c[id]||0)+1);
+  const linhas=Object.entries(c).map(([id,q])=>`• ${q}x ${by[id].n}`).join("\n");
+  const msg=`Oi, Doce Mordida! Quero uma caixa com ${box.length}:\n${linhas}\nTotal: ${brl(box.reduce((a,id)=>a+by[id].p,0))}\nRetirada ou entrega?`;
+  try{await navigator.clipboard.writeText(msg);toast("Pedido copiado! É só colar na conversa do WhatsApp.")}catch(_){toast("Abrindo o WhatsApp…")}
+  setTimeout(()=>window.open(WA,"_blank","noopener"),600);
+};
+let trayVisible=false;
+new IntersectionObserver(es=>{trayVisible=es[0].isIntersecting;render()},{threshold:.2}).observe(document.querySelector(".tray"));
+
+// aberto agora
+(function(){const n=new Date(),d=n.getDay(),h=n.getHours()+n.getMinutes()/60,el=$("aberto");
+  document.querySelector(`#hours [data-d="${d}"]`).classList.add("today");
+  if(d===1){el.innerHTML='<i class="dot off"></i>Hoje fechado · volta terça às 14h'}
+  else if(h>=14&&h<20){el.innerHTML=`<i class="dot"></i>Aberto agora · até as 20h`}
+  else if(h<14){el.innerHTML='<i class="dot off"></i>Abre hoje às 14h · já dá pra encomendar'}
+  else{el.innerHTML=`<i class="dot off"></i>Fechado agora · abre ${d===0?"terça":"amanhã"} às 14h`}
+})();
+
+// revelar
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12,rootMargin:"0px 0px -5% 0px"});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+render();
+</script>
+</body>
+</html>
